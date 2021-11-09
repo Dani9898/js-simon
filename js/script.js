@@ -5,22 +5,26 @@
     // confrontare il primo numero dell'array dell'utente con ogni numero dell'array casuale. Se c'è corrispondenza allora salvare quello nell'array dei numeri indovinati. Confrontare poi gli altri. => for (let i = 0; i < array.length; i++) { if (numeriCasuali.includes(numeriUtente[i]) { nuovoarray.push[numeriUtente[i]]}}
 
 
-    const numeriCasuali = document.getElementById("numeri");
-    const countdown = document.getElementById("timer");
+const numeriCasuali = document.getElementById("numeri");
+const countdown = document.getElementById("timer");
 
-    const randomNumbers = [];
-    while (randomNumbers.length < 5) {
-        let numero = Math.floor(Math.random() * 100 + 1);
-        while (randomNumbers.includes(numero)) {
-            numero = Math.floor(Math.random() * 100 + 1);
-        }
-        randomNumbers.push(numero)
+function stampa(vettore) {
+    vettore.forEach((elemento) => {
+        numeriCasuali.innerHTML += `${elemento} `
+    })
+}
+
+const randomNumbers = [];
+while (randomNumbers.length < 5) {
+    let numero = Math.floor(Math.random() * 100 + 1);
+    while (randomNumbers.includes(numero)) {
+        numero = Math.floor(Math.random() * 100 + 1);
     }
+    randomNumbers.push(numero)
+}
 console.log(randomNumbers);
 
-randomNumbers.forEach((elemento) => {
-    numeriCasuali.innerHTML += `${elemento} `;
-})
+stampa(randomNumbers)
 
 let tempo = 30;
 countdown.innerHTML = tempo;
@@ -57,9 +61,7 @@ function myFunction() {
         console.log(numeriIndividuati);
         numeriCasuali.innerHTML = "";
 
-        numeriIndividuati.forEach((elemento) => {
-            numeriCasuali.innerHTML += `${elemento} `
-        })
+        stampa(numeriIndividuati)
 
     }
 }
