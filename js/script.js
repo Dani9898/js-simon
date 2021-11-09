@@ -22,7 +22,7 @@ randomNumbers.forEach((elemento) => {
     numeriCasuali.innerHTML += `${elemento} `;
 })
 
-let tempo = 5;
+let tempo = 30;
 countdown.innerHTML = tempo;
 
 const numeriUtente = [];
