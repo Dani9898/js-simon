@@ -49,7 +49,7 @@ function myFunction() {
         console.log(numeriUtente);
 
         for (let i = 0; i < randomNumbers.length; i++) {
-            if (randomNumbers.includes(numeriUtente[i])) {
+            if (randomNumbers.includes(numeriUtente[i]) && !numeriIndividuati.includes(numeriUtente[i])) {
                 numeriIndividuati.push(numeriUtente[i])   
             }
         }
